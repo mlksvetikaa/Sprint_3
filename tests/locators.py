@@ -25,4 +25,7 @@ class TestLocators:
     FILLINGS = By.XPATH, './/h2[text() = "Начинки"]'  # таб "Начинки"
     SAUCES = By.XPATH, './/h2[text() = "Соусы"]'  # таб "Соусы"
     ROLLS = By.XPATH, './/h2[text() = "Булки"]'  # таб "Булки"
+    FILLINGS_NAME = By.XPATH, '//*[contains(text(), "Мясо бессмертных моллюсков Protostomia")]'  # один из вариантов начинок
+    SAUCES_NAME = By.XPATH, '//*[contains(text(), "Соус Spicy-X")]'  # один из вариантов соусов
+    ROLLS_NAME = By.XPATH, '//*[contains(text(), "Флюоресцентная булка R2-D3")]'  # один из вариантов булок
     INCORRECT_PASSWORD = By.XPATH, './/p[text() = "Некорректный пароль"]'  # подсказка "Некорректный пароль"

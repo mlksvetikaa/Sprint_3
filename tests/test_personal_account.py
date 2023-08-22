@@ -6,13 +6,10 @@ from tests.locators import TestLocators
 
 class TestToFromAccount:
     def test_to_account(self, driver):
-        driver.get('https://stellarburgers.nomoreparties.site/')
         driver.find_element(*TestLocators.SEARCH_ACCOUNT_PROFILE).click()
         assert '/login' in driver.current_url
-        driver.quit()
 
     def test_from_account_to_constructor(self, driver):
-        driver.get('https://stellarburgers.nomoreparties.site/')
         driver.find_element(*TestLocators.SEARCH_ACCOUNT_PROFILE).click()
         driver.find_element(*TestLocators.SEARCH_NAME).send_keys(TestData.EMAIL_LOGIN)
         driver.find_element(*TestLocators.SEARCH_PASS).send_keys(TestData.PASSWORD)
@@ -20,10 +17,8 @@ class TestToFromAccount:
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located(TestLocators.SEARCH_CHECKOUT))
         assert driver.find_element(*TestLocators.SEARCH_CHECKOUT), "Не удалось проверить переход к разделу"
-        driver.quit()
 
     def test_from_account_to_logo(self, driver):
-        driver.get('https://stellarburgers.nomoreparties.site/')
         driver.find_element(*TestLocators.SEARCH_ACCOUNT_PROFILE).click()
         driver.find_element(*TestLocators.SEARCH_NAME).send_keys(TestData.EMAIL_LOGIN)
         driver.find_element(*TestLocators.SEARCH_PASS).send_keys(TestData.PASSWORD)
@@ -31,4 +26,3 @@ class TestToFromAccount:
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located(TestLocators.SEARCH_CHECKOUT))
         assert driver.find_element(*TestLocators.SEARCH_CHECKOUT), "Не удалось проверить переход к разделу"
-        driver.quit()
